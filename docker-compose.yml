@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: app_cognos
+    volumes:
+      - .:/app_cognos
+    ports:
+      - "5005:5005"
