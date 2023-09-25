@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "f8b8bf34-a929-452b-b3d4-3d41c2a8357b",
+		"name": "Cognos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18791129"
+	},
+	"item": [
+		{
+			"name": "session_key",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"parameters\": [\n        {\n            \"name\": \"CAMNNamepace\",\n            \"value\": \"LDAP\"\n        },\n        {\n            \"name\": \"CAMUsername\",\n            \"value\": \"lpatino\"\n        },\n        {\n            \"name\": \"CAMPassword\",\n            \"value\": \"lpatino1234\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://cd61-155-190-18-7.ngrok-free.app/api/v1/session"
+			},
+			"response": []
+		},
+		{
+			"name": "session_key session",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "IBM-BA-Authorization",
+						"value": "CAM MTsxMDE6MDAwZDgwNTEtZjIyOS03YmZiLWVhMmEtZGQyZWNjNWRkNzJlOjI1NDQzODYzNTA7MDszOzA7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://cd61-155-190-18-7.ngrok-free.app/api/v1/session"
+			},
+			"response": []
+		},
+		{
+			"name": "session_key files",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "IBM-BA-Authorization",
+						"value": "CAM MTsxMDE6MDAwZDgwNTEtZjIyOS03YmZiLWVhMmEtZGQyZWNjNWRkNzJlOjI1NDQzODYzNTA7MDszOzA7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://cd61-155-190-18-7.ngrok-free.app/api/v1/files"
+			},
+			"response": []
+		},
+		{
+			"name": "session_key extensions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "IBM-BA-Authorization",
+						"value": "CAM MTsxMDE6MDAwZDgwNTEtZjIyOS03YmZiLWVhMmEtZGQyZWNjNWRkNzJlOjI1NDQzODYzNTA7MDszOzA7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://cd61-155-190-18-7.ngrok-free.app/api/v1/extensions"
+			},
+			"response": []
+		},
+		{
+			"name": "xsrf-token report",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "IBM-BA-Authorization",
+						"value": "CAM MTsxMDE6ZTA4YzljY2MtYzFiMC01NzM2LWJiY2EtNWU2NTA2ZDIzZTI5OjI2Nzg2OTc0MjQ7MDszOzA7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cd61-155-190-18-7.ngrok-free.app/bi/v1/disp/rds/reportData/report/i7E39FA1D451B46D580850BF7BBEB77D8?fmt=HTML",
+					"protocol": "https",
+					"host": [
+						"cd61-155-190-18-7",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"bi",
+						"v1",
+						"disp",
+						"rds",
+						"reportData",
+						"report",
+						"i7E39FA1D451B46D580850BF7BBEB77D8"
+					],
+					"query": [
+						{
+							"key": "fmt",
+							"value": "HTML"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "xsrf-token dashboard",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "IBM-BA-Authorization",
+						"value": "CAM MTsxMDE6ZTA4YzljY2MtYzFiMC01NzM2LWJiY2EtNWU2NTA2ZDIzZTI5OjI2Nzg2OTc0MjQ7MDszOzA7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://leoesleo1111.postman.co/workspace/My-Workspace~2953467a-1237-43f8-87d8-0ff27dc72390/request/18791129-a3ac2072-50da-47e5-9889-012025166c70"
+			},
+			"response": []
+		},
+		{
+			"name": "session_key",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "IBM-BA-Authorization",
+						"value": "CAM MTsxMDE6ZTA4YzljY2MtYzFiMC01NzM2LWJiY2EtNWU2NTA2ZDIzZTI5OjI2Nzg2OTc0MjQ7MDszOzA7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://cd61-155-190-18-7.ngrok-free.app/api/v1/session"
+			},
+			"response": []
+		}
+	]
+}
