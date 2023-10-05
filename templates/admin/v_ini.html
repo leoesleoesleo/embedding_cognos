@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'incluidos/head.html' %}
+
+<script type="text/javascript">
+ 
+ function exit(){
+    window.location.href = '/logout'
+ }
+
+ function generate_report(id) {   
+        $.ajax({
+            url: '/generate_report',
+            data: {"id":id},
+            type: "get",
+            beforeSend: show_loading(),
+            dataType: "html",
+            success: function(res){
+                $('div#contenido').html(res); 
+                hide_loading();                
+             },
+             error: function (xhr, status, error) {
+              // Mostrar mensaje de error genérico
+              $.notify("Ocurrió un error en la solicitud", "error");
+              hide_loading();
+            },
+        });
+    }
+
+
+</script>
+
+
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <!--<h6 style="font-size:20px; color:#AEAEAE;">Proveedor <span class="fa fa-industry"></span></h6>-->
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <img id="loading" style="padding-left:50%;display:none;" class="img-fluid" src="../../static/admin/dist/img/cargando.gif" width="150" height="10" alt="">
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <strong><h5 style="color:#128C7E;font-weight:bold !important;">Bienvenido: <span id="session">{{session['username']}}</span></h5></strong>
+      </li>
+    </ul>
+  </nav>
+  <!-- Main Sidebar Container -->
+
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#128c7e !important;">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <!--<img src="static/dist/img/logoSimulador.png" class="brand-image img-circle elevation-3" style="opacity: .8">-->
+      <center>
+        <span class="brand-text font-weight-light" style="color:#FFF !important;font-weight:bold !important;">Demo</span>
+      </center>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+            <li class="nav-item">
+                <a href="#" class="nav-link active" style="color:#FFF !important;">
+                    <i style="color:#075E54 !important;" class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>Reportes<i class="right fas fa-angle-left"></i></p>
+                </a>
+                <ul class="nav nav-treeview" style="display: none;">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="generate_report('iB54962F2F8CD4483AF3110C3B611EE8A')"><i class="far fa-circle nav-icon"></i>
+                            <p>Report 1</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="generate_report('i37693368574D48318C4095FE665D3205')"><i class="far fa-circle nav-icon"></i>
+                            <p>Report 2</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="generate_report('iB8EA1FBD71164BBB892C5548A2C64363')"><i class="far fa-circle nav-icon"></i>
+                            <p>Report 3</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="generate_report('i5020DEB5796643E89FC949B01050B43A')"><i class="far fa-circle nav-icon"></i>
+                            <p>Report 4</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>  
+
+          <li class="nav-item">
+            <a href="#" class="nav-link" onclick="exit()" style="color:#FFF !important;">
+              <i style="color:#075E54;" class="nav-icon fas fa-arrow-circle-right"></i>
+              <p>
+                Salir
+              </p>
+            </a>
+          </li>       
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div id="contenido" class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <!--<h1 class="m-0 text-dark">Simulador Café </h1>-->
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!--
+    <center>
+      <h1 style="font-weight:bold; color:#25D366; font-size:50px;">Admin
+        <span style="color:#25D366; font-weight:bold; font-size:50px"> | <span>
+        <span style="color:#075E54; font-weight:bold; font-size:50px">Merca
+          <span style="color:#128C7E; font-weight:bold; font-size:50px">Botsi<span>
+        <span>
+      </h1>
+    </center>
+    -->
+    <center>
+    <h2 style="font-size:80px; font-weight:bold; color: #128C7E !important; "><span style="color: #075E54 !important;">Demo</span> Embeding Cognos</h2>
+    <img src="static/admin/dist/img/code-removebg-preview.png" style="max-width: 20%;background-color:#f4f6f9;">
+    </center>
+    <br/>
+    <br/>
+    <br/>
+
+    <!--
+    <section class="content">
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="info-box">
+          <img src="../../static/web/assets/img/WhatsApp-logo.png" width="50" height="50">
+            <div class="info-box-content">
+              <span class="info-box-text">Pedidos Whatsapp</span>
+              <span class="info-box-number">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="info-box">
+          <img src="../../static/web/assets/img/telegramlogo.png" width="50" height="50">
+            <div class="info-box-content">
+              <span class="info-box-text">Pedidos Telegram</span>
+              <span class="info-box-number">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="info-box">
+          <img src="../../static/web/assets/img/logo.png" width="50" height="50" >
+            <div class="info-box-content">
+              <span class="info-box-text">Pedidos MercaBotsi</span>
+              <span class="info-box-number">0</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+    </section>
+    -->
+
+    <!--
+    <section class="content">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+          <span class="info-box-icon bg-green"><i class="ion ion-ios-gear-outline"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">CPU Traffic</span>
+              <span class="info-box-number">90<small>%</small></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+          <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">Likes</span>
+              <span class="info-box-number">41,410</span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+          <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">Sales</span>
+              <span class="info-box-number">760</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+          <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">New Members</span>
+              <span class="info-box-number">2,000</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+    </section>
+    -->
+
+  </div>
+  <!-- /.content-wrapper -->
+
+
+
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2023 <samp style="color:#075E54">GBM</samp></strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0 - <b>Fecha Corte: </b>Octubre 2023
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+
+
+</body>
+{% include 'incluidos/footer.html' %}
+</html>
+
+
